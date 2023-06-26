@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram name="Bodega - Recepción de productos" xmlns="http://graphml.graphdrawing.org/xmlns">
+  <mxGraphModel dx="1060" dy="690" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <root>
+      <mxCell id="0" />
+      <mxCell id="1" parent="0" />
+      <mxCell id="P-SFqAv3o74xlRsgdtFg6" value="" style="group" vertex="1" connectable="0" parent="1">
+        <mxGeometry x="130" y="40" width="420" height="380" as="geometry" />
+      </mxCell>
+      <mxCell id="V-SFqAv3o74xlRsgdtFg6" value="" style="container" vertex="1" connectable="0" parent="P-SFqAv3o74xlRsgdtFg6">
+        <mxGeometry as="geometry" />
+      </mxCell>
+      <mxCell id="P-SFqAv3o74xlRsgdtFg7" value="Transportista" style="shape=swimlane;rounded=0;whiteSpace=wrap;html=1;containerType=swimlane;" vertex="1" connectable="0" parent="V-SFqAv3o74xlRsgdtFg6">
+        <mxGeometry x="10" y="10" width="400" height="70" as="geometry" />
+      </mxCell>
+      <mxCell id="P-SFqAv3o74xlRsgdtFg8" value="Bodeguero" style="shape=swimlane;rounded=0;whiteSpace=wrap;html=1;containerType=swimlane;" vertex="1" connectable="0" parent="V-SFqAv3o74xlRsgdtFg6">
+        <mxGeometry x="10" y="90" width="400" height="70" as="geometry" />
+      </mxCell>
+      <mxCell id="P-SFqAv3o74xlRsgdtFg9" value="Jefe de bodega" style="shape=swimlane;rounded=0;whiteSpace=wrap;html=1;containerType=swimlane;" vertex="1" connectable="0" parent="V-SFqAv3o74xlRsgdtFg6">
+        <mxGeometry x="10" y="170" width="400" height="70" as="geometry" />
+      </mxCell>
+      <mxCell id="P-SFqAv3o74xlRsgdtFg10" value="Digitador" style="shape=swimlane;rounded=0;whiteSpace=wrap;html=1;containerType=swimlane;" vertex="1" connectable="0" parent="V-SFqAv3o74xlRsgdtFg6">
+        <mxGeometry x="10" y="250" width="400" height="70" as="geometry" />
+      </mx
