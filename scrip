@@ -1,0 +1,31 @@
+@startuml
+start
+:Transportista entrega guía de despacho;
+:Transportista entrega producto a bodeguero;
+repeat while (Hay más productos)
+  :Bodeguero recepciona cada producto;
+  :Bodeguero pide verificación del jefe de bodega;
+  :Jefe de bodega verifica cada producto con el listado en la guía de despacho;
+  if (¿Es igual lo recibido vs guía?) then (Sí)
+    :Producto se recepciona;
+  else (No)
+    :Producto se recepciona;
+    :Se modifica guía de despacho;
+  endif
+endwhile (No hay más productos)
+:Jefe de bodega aprueba recepción de productos;
+:Jefe de bodega entrega guía de despacho actualizada al digitador;
+:Digitador recepciona guía de despacho actualizada;
+:Digitador ingresa los productos de la guía de despacho en el sistema;
+:Sistema verifica la existencia de cada producto ingresado en base de datos;
+if (¿El producto existe en base de datos?) then (Sí)
+  :Sistema actualiza datos del producto en base de datos;
+else (No)
+  :Sistema registra datos del producto en base de datos;
+endif
+:Sistema notifica al digitador que la carga de datos se realizó correctamente;
+:Sistema notifica al jefe de bodega que la carga de datos se realizó correctamente;
+:Jefe de bodega recepciona mensaje de carga exitosa enviado por el sistema;
+stop
+@enduml
+
