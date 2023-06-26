@@ -1,0 +1,38 @@
+@startbpmn
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd"
+             id="definitions">
+
+  <process id="bodegaRecepcionProductos" isExecutable="true">
+  
+    <startEvent id="start" />
+    
+    <userTask id="entregaGuia" name="Entrega de guía de despacho" />
+    <userTask id="recepcionProducto" name="Recepcionar producto" />
+    <userTask id="verificacionProducto" name="Verificación del producto" />
+    <userTask id="verificacionGuia" name="Verificar con guía de despacho" />
+    <exclusiveGateway id="condicionIgual" name="¿Es igual lo recibido vs guía?" />
+    <exclusiveGateway id="condicionUltimo" name="¿Es el último producto?" />
+    <userTask id="aprobacionJefe" name="Aprueba recepción de productos" />
+    <userTask id="entregaGuiaActualizada" name="Entrega guía de despacho actualizada" />
+    <userTask id="recepcionGuiaActualizada" name="Recepcionar guía de despacho" />
+    <userTask id="ingresoProductos" name="Ingresar productos de la guía" />
+    <userTask id="verificacionExistencia" name="Verificar existencia del producto en base de datos" />
+    <exclusiveGateway id="condicionProductoExiste" name="¿El producto existe en base de datos?" />
+    <userTask id="actualizacionRegistro" name="Actualizar o registrar datos del producto" />
+    <sendTask id="notificacionCargaExitosa" name="Notificación de carga de datos exitosa" />
+    <userTask id="recepcionMensajeExitoso" name="Recepcionar mensaje de carga exitosa" />
+    <endEvent id="end" />
+    
+    <sequenceFlow id="flow1" sourceRef="start" targetRef="entregaGuia" />
+    <sequenceFlow id="flow2" sourceRef="entregaGuia" targetRef="recepcionProducto" />
+    <sequenceFlow id="flow3" sourceRef="recepcionProducto" targetRef="verificacionProducto" />
+    <sequenceFlow id="flow4" sourceRef="verificacionProducto" targetRef="verificacionGuia" />
+    <sequenceFlow id="flow5" sourceRef="verificacionGuia" targetRef="condicionIgual" />
+    <sequenceFlow id="flow6a" sourceRef="condicionIgual" targetRef="recepcionProducto">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${iguales}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow6b" sourceRef="condicionIgual" targetRef="condicionUltimo">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${!iguales}]]></conditionExpression>
+    </sequenceFlow>
